@@ -18,9 +18,9 @@
 }
 
 .link.isActive {
-  color: violet;
+  color: lightgreen;
 }
 .link:hover,
 .link:focus {
-  color: magenta;
+  color: pink;
 }

@@ -6,7 +6,7 @@ const Button = styled.button`
   padding: 0 15px;
   border-radius: 15px;
   border-color: white;
-  background-color: blueviolet;
+  background-color: blue;
   color: white;
   transition-property: background-color, color;
   transition-duration: 400ms;
