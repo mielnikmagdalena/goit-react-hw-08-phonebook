@@ -4,11 +4,11 @@ import { NavLink } from 'react-router-dom';
 const changeActive = isActive => {
   switch (isActive) {
     case 'active':
-      return 'color: violet';
+      return 'color: pink';
     case 'inactive':
-      return 'color: blueviolet';
+      return 'color: pink';
     default:
-      return 'color: blueviolet';
+      return 'color: pink';
   }
 };
 
