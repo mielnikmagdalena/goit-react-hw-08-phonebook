@@ -4,19 +4,25 @@ import Button from 'styled/Button';
 import Input from 'styled/Input';
 import LabelContainer from 'styled/LabelContainer';
 import Form from 'styled/Form';
+import { Notify } from 'notiflix'; // Dodaj import Notify
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     const form = e.currentTarget;
-    dispatch(
-      logIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
+    try {
+      await dispatch(
+        logIn({
+          email: form.elements.email.value,
+          password: form.elements.password.value,
+        })
+      );
+    } catch (error) {
+      // Obsłuż błąd logowania
+      logInFailureNotification(); // Wywołaj komunikat błędu
+    }
     form.reset();
   };
 

@@ -1,10 +1,11 @@
 import React from 'react';
-import styles from './ContactsListElement.module.css';
+import css from './ContactsListElement.module.css';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import PropTypes from 'prop-types';
 import Notiflix from 'notiflix';
-import { FaStar } from 'react-icons/fa';
+import { FaSkullCrossbones } from 'react-icons/fa';
+
 const ContactsListElement = ({ contact }) => {
   const dispatch = useDispatch();
   function getRandomHexColor() {
@@ -24,8 +25,8 @@ const ContactsListElement = ({ contact }) => {
   };
 
   return (
-    <div className={styles.contactLi}>
-      <p className={styles.contact}>
+    <div className={css.contactLi}>
+      <p className={css.contact}>
         <span
           style={{ color: getRandomHexColor(), textShadow: '1px 1px black' }}
         >
@@ -33,9 +34,9 @@ const ContactsListElement = ({ contact }) => {
         </span>{' '}
         {contact.name}:
       </p>
-      <p className={styles.contact}>{contact.number}</p>
-      <button type="button" className={styles.btnDelete} onClick={handleClick}>
-        <FaStar />
+      <p className={css.contact}>{contact.number}</p>
+      <button type="button" className={css.btnDelete} onClick={handleClick}>
+        <FaSkullCrossbones />
       </button>
     </div>
   );

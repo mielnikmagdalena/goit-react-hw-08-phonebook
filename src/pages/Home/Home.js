@@ -1,15 +1,14 @@
-import styles from './Home.module.css';
+import css from './Home.module.css';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>
+    <div className={css.container}>
+      <h1 className={css.title}>
         <div>
           <p>My</p>
-          <p>private</p>
-          <p>phonebook</p>
+          <p>Phonebook</p>
         </div>
-        <span className={styles.flower}>&#10048;</span>
+        <span className={css.flower}>&#10048;</span>
       </h1>
     </div>
   );

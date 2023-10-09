@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filter/filterSlice';
 import { nanoid } from 'nanoid';
-import styles from './Filter.module.css';
+import css from './Filter.module.css';
 import Input from 'styled/Input';
 import LabelContainer from 'styled/LabelContainer';
 
@@ -15,7 +15,7 @@ const Filter = () => {
   };
 
   return (
-    <div className={styles.filter}>
+    <div className={css.filter}>
       <LabelContainer>
         <label htmlFor={filterId}>Find contacts</label>
         <Input

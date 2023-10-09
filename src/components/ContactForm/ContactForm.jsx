@@ -10,7 +10,7 @@ import Button from 'styled/Button';
 import Input from 'styled/Input';
 import LabelContainer from 'styled/LabelContainer';
 import Form from 'styled/Form';
-import styles from './ContactForm.module.css';
+import css from './ContactForm.module.css';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -45,9 +45,9 @@ const ContactForm = () => {
   const numberInputId = nanoid();
 
   return (
-    <Form className={styles.formBox} onSubmit={handleSubmit}>
+    <Form className={css.formBox} onSubmit={handleSubmit}>
       <LabelContainer>
-        <label className={styles.label} htmlFor={nameInputId}>
+        <label className={css.label} htmlFor={nameInputId}>
           Name
         </label>
         <Input
@@ -61,7 +61,7 @@ const ContactForm = () => {
         />
       </LabelContainer>
       <LabelContainer>
-        <label className={styles.label} htmlFor={numberInputId}>
+        <label className={css.label} htmlFor={numberInputId}>
           Number
         </label>
         <Input

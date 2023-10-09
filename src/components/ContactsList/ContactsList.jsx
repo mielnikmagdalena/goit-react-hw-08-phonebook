@@ -5,18 +5,18 @@ import { selectFilteredContacts } from 'redux/filter/selectors.js';
 import Loader from 'components/Loader/Loader.js';
 import ContactsListElement from '../ContactslistElement/ContactsListElement';
 import ScrollButton from 'components/ScrollButton/ScrollButton.jsx';
-import styles from './ContactsList.module.css';
+import css from './ContactsList.module.css';
 
 const ContactsList = () => {
   const items = useSelector(selectFilteredContacts);
   const isLoading = useSelector(selectIsLoading);
 
   return (
-    <div className={styles.contactsListBox}>
-      <h4 className={styles.title}>
+    <div className={css.contactsListBox}>
+      <h4 className={css.title}>
         You have {items.length} contact{items.length === 1 ? null : 's'}
       </h4>
-      <ul className={styles.contactsList}>
+      <ul className={css.contactsList}>
         {!!isLoading && <Loader />}
         {!!items &&
           items.map(contact => (
