@@ -1,10 +1,16 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
+import { Notify } from 'notiflix'; // Dodaj import Notify
 import Button from 'styled/Button';
 import Input from 'styled/Input';
 import LabelContainer from 'styled/LabelContainer';
 import Form from 'styled/Form';
-import { Notify } from 'notiflix'; // Dodaj import Notify
+
+const NOTIFY_PARAMS = {
+  backgroundColor: '#FF1493',
+  timeout: 3000,
+  position: 'left-top',
+};
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -21,7 +27,7 @@ export const LoginForm = () => {
       );
     } catch (error) {
       // Obsłuż błąd logowania
-      logInFailureNotification(); // Wywołaj komunikat błędu
+      Notify.failure('Wrong email or password.', NOTIFY_PARAMS); // Wywołaj komunikat błędu
     }
     form.reset();
   };
